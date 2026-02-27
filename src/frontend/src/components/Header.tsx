@@ -7,11 +7,6 @@ export default function Header() {
         <div className="flex items-center h-16 md:h-20">
           {/* Logo / Brand */}
           <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/assets/generated/logo-mark.dim_256x256.png"
-              alt="Empower Southwest logo"
-              className="h-10 w-10 md:h-12 md:w-12 object-contain"
-            />
             <div className="flex flex-col leading-tight">
               <span className="text-gold font-heading font-bold text-lg md:text-xl tracking-wide uppercase">
                 Empower

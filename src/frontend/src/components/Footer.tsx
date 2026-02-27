@@ -32,11 +32,6 @@ export default function Footer() {
             {/* Organization Info */}
             <div className="md:text-right">
               <div className="flex md:justify-end items-center gap-2 mb-3">
-                <img
-                  src="/assets/generated/logo-mark.dim_256x256.png"
-                  alt="Empower Southwest"
-                  className="h-8 w-8 object-contain opacity-80"
-                />
                 <span className="text-gold font-heading font-bold text-sm uppercase tracking-wide">
                   Empower Southwest
                 </span>
