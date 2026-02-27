@@ -51,21 +51,6 @@ export default function Footer() {
             >
               Privacy Policy
             </a>
-            <p>
-              Built with{' '}
-              <span className="text-gold" role="img" aria-label="love">
-                ♥
-              </span>{' '}
-              using{' '}
-              <a
-                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
-              >
-                caffeine.ai
-              </a>
-            </p>
           </div>
         </div>
       </div>
