@@ -7,5 +7,13 @@ export interface None {
     __kind__: "None";
 }
 export type Option<T> = Some<T> | None;
+export interface Signup {
+    smsOptIn: boolean;
+    cellPhone: string;
+    fullName: string;
+    zipCode: string;
+}
 export interface backendInterface {
+    getAllSignups(): Promise<Array<Signup>>;
+    submitSignup(fullName: string, zipCode: string, cellPhone: string, smsOptIn: boolean): Promise<void>;
 }

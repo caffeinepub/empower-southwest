@@ -7,7 +7,9 @@ export default function Home() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: "url('/assets/generated/hero-bg.dim_1440x600.png')" }}
+        style={{
+          backgroundImage: "url('/assets/generated/hero-bg.dim_1440x600.png')",
+        }}
         aria-hidden="true"
       />
       {/* Overlay for depth */}
@@ -31,14 +33,18 @@ export default function Home() {
 
           {/* Mission Statement */}
           <p className="font-sans text-cream-muted text-lg md:text-xl leading-relaxed max-w-2xl">
-            We are committed to building a people-powered movement in Chicago's Southwest suburbs to make government
-            accountable and responsive to the needs of working &amp; middle class families.
+            We are committed to building a people-powered movement in Chicago's
+            Southwest suburbs to make government accountable and responsive to
+            the needs of working &amp; middle class families.
           </p>
         </div>
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gold" aria-hidden="true" />
+      <div
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gold"
+        aria-hidden="true"
+      />
     </section>
   );
 }

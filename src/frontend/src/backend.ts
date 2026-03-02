@@ -89,10 +89,46 @@ export class ExternalBlob {
         return this;
     }
 }
+export interface Signup {
+    smsOptIn: boolean;
+    cellPhone: string;
+    fullName: string;
+    zipCode: string;
+}
 export interface backendInterface {
+    getAllSignups(): Promise<Array<Signup>>;
+    submitSignup(fullName: string, zipCode: string, cellPhone: string, smsOptIn: boolean): Promise<void>;
 }
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
+    async getAllSignups(): Promise<Array<Signup>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getAllSignups();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getAllSignups();
+            return result;
+        }
+    }
+    async submitSignup(arg0: string, arg1: string, arg2: string, arg3: boolean): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.submitSignup(arg0, arg1, arg2, arg3);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.submitSignup(arg0, arg1, arg2, arg3);
+            return result;
+        }
+    }
 }
 export interface CreateActorOptions {
     agent?: Agent;

@@ -1,8 +1,15 @@
-import { RouterProvider, createRouter, createRootRoute, createRoute, Outlet } from '@tanstack/react-router';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import {
+  Outlet,
+  RouterProvider,
+  createRootRoute,
+  createRoute,
+  createRouter,
+} from "@tanstack/react-router";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import GetInvolved from "./pages/GetInvolved";
+import Home from "./pages/Home";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -18,21 +25,31 @@ const rootRoute = createRootRoute({
 
 const homeRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/',
+  path: "/",
   component: Home,
 });
 
 const privacyRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/privacy-policy',
+  path: "/privacy-policy",
   component: PrivacyPolicy,
 });
 
-const routeTree = rootRoute.addChildren([homeRoute, privacyRoute]);
+const getInvolvedRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/get-involved",
+  component: GetInvolved,
+});
+
+const routeTree = rootRoute.addChildren([
+  homeRoute,
+  privacyRoute,
+  getInvolvedRoute,
+]);
 
 const router = createRouter({ routeTree });
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }

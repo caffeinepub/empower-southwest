@@ -1,6 +1,10 @@
 export default function Footer() {
   const year = new Date().getFullYear();
-  const appId = encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'empower-southwest');
+  const _appId = encodeURIComponent(
+    typeof window !== "undefined"
+      ? window.location.hostname
+      : "empower-southwest",
+  );
 
   return (
     <footer className="bg-navy-dark text-cream">
@@ -14,8 +18,9 @@ export default function Footer() {
                 Legal Disclosure
               </h3>
               <p className="text-cream-muted text-xs leading-relaxed font-sans">
-                Paid for by Empower Southwest. A copy of our report is filed with the State Board of Elections is (or
-                will be) available on the Board's official website (
+                Paid for by Empower Southwest. A copy of our report is filed
+                with the State Board of Elections is (or will be) available on
+                the Board's official website (
                 <a
                   href="https://www.elections.il.gov"
                   target="_blank"
@@ -24,8 +29,8 @@ export default function Footer() {
                 >
                   www.elections.il.gov
                 </a>
-                ) or for purchase from the State Board of Elections, Springfield, Illinois. Contributions are not tax
-                deductible.
+                ) or for purchase from the State Board of Elections,
+                Springfield, Illinois. Contributions are not tax deductible.
               </p>
             </div>
 
@@ -37,7 +42,8 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-cream-muted text-xs font-sans">
-                Building a people-powered movement in Chicago's Southwest suburbs.
+                Building a people-powered movement in Chicago's Southwest
+                suburbs.
               </p>
             </div>
           </div>
@@ -45,12 +51,20 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="mt-8 pt-6 border-t border-navy-light flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream-muted font-sans">
             <p>© {year} Empower Southwest. All rights reserved.</p>
-            <a
-              href="/privacy-policy"
-              className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
-            >
-              Privacy Policy
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="/get-involved"
+                className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
+              >
+                Get Involved
+              </a>
+              <a
+                href="/privacy-policy"
+                className="text-gold hover:text-gold-light underline underline-offset-2 transition-colors"
+              >
+                Privacy Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
