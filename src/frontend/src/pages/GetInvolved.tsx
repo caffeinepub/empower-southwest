@@ -29,11 +29,6 @@ export default function GetInvolved() {
       setError("Please enter a valid 5-digit zip code.");
       return;
     }
-    if (!cellPhone.trim()) {
-      setError("Please enter your cell phone number.");
-      return;
-    }
-
     if (!actor) {
       setError("Unable to connect. Please refresh and try again.");
       return;
@@ -172,14 +167,13 @@ export default function GetInvolved() {
                 className="text-cream font-sans font-semibold text-sm uppercase tracking-wide"
               >
                 Cell Phone{" "}
-                <span className="text-gold" aria-hidden="true">
-                  *
+                <span className="text-cream-muted font-sans font-normal text-xs normal-case tracking-normal">
+                  (optional)
                 </span>
               </Label>
               <Input
                 id="cellPhone"
                 type="tel"
-                required
                 autoComplete="tel"
                 inputMode="tel"
                 placeholder="(555) 555-5555"
@@ -204,7 +198,10 @@ export default function GetInvolved() {
                   htmlFor="smsOptIn"
                   className="text-cream font-sans text-sm leading-relaxed cursor-pointer"
                 >
-                  I consent to receive text messages from Empower Southwest
+                  I consent to receive text messages from Empower Southwest{" "}
+                  <span className="text-cream-muted font-sans font-normal text-xs normal-case tracking-normal">
+                    (optional)
+                  </span>
                 </Label>
               </div>
 
